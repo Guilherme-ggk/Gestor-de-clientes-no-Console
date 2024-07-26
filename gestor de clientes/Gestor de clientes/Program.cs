@@ -72,11 +72,27 @@ namespace Gestor_de_clientes
         }
         static void Listagem()
         {
-
+            Console.WriteLine("Listagem de Clientes");
+            int id = 0;
+            if(clientes.Count > 0)
+            {
+                    Console.WriteLine($"Nome: {id}");
+                    Console.WriteLine($"Nome: {cliente.nome}");
+                    Console.WriteLine($"Email: {cliente.email}");
+                    Console.WriteLine($"CPF: {cliente.cpf}");
+                    id++;
+            }
+            else
+            {
+                Console.WriteLine("Nenhum cliente cadastrado!");
+                Console.WriteLine("aperte enter para voltar ao menu.");
+            }
+            Console.ReadLine();
         }
         static void Remover()
         {
-
+            Listagem();
+            Console.WriteLine("Escolha ");
         }
         static void Salvar()
         {
