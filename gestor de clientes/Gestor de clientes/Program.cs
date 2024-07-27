@@ -92,7 +92,13 @@ namespace Gestor_de_clientes
         static void Remover()
         {
             Listagem();
-            Console.WriteLine("Escolha ");
+            Console.WriteLine("Escolha um cliente para remover (id):");
+            int id = Console.ReadLine();
+            if(id >= 0 && id < clientes.Count)
+            {
+                clientes.RemoveAt(id);
+                Salvar();
+            }
         }
         static void Salvar()
         {
