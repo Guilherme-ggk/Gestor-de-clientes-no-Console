@@ -38,17 +38,20 @@ namespace Gestor_de_clientes
             switch (opcao)
             {
                     case Menu.listagem:
+                        Listagem();
                     break;
                     case Menu.adicionar:
+                        Adicionar();
                     break;
                     case Menu.remover:
+                        Remover();
                     break;
                     case Menu.sair:
                         escolheuSair = true;
                     break;
                 
             }
-                Console.ReadLine();
+                Console.Clear();
             }
         }
         static void Adicionar()
@@ -78,12 +81,17 @@ namespace Gestor_de_clientes
             int id = 0;
             if(clientes.Count > 0)
             {
-                Cliente cliente = new Cliente();
+                
+
+                foreach (var cliente in clientes)
+                {
+                    
                     Console.WriteLine($"Nome: {id}");
                     Console.WriteLine($"Nome: {cliente.nome}");
                     Console.WriteLine($"Email: {cliente.email}");
                     Console.WriteLine($"CPF: {cliente.cpf}");
                     id++;
+                }
             }
             else
             {
