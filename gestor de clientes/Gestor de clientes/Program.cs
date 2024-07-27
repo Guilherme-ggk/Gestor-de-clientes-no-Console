@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Runtime.Serialization.Binary;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+
 
 namespace Gestor_de_clientes
 {
     internal class Program
     {
-        [System.Serialization]
+        [System.Serializable]
         struct Cliente
         {
             public string nome;
@@ -31,17 +33,17 @@ namespace Gestor_de_clientes
                 Console.WriteLine("<<  Gestor de Clientes  >>");
             Console.WriteLine("1-listagem\n2-adicionar\n3-remover\n4-sair");
             int intop = int.Parse(Console.ReadLine());
-            Menu opcao = (Menu) opcao;
+            Menu opcao = (Menu) intop;
 
             switch (opcao)
             {
-                case Menu.listagem;
+                    case Menu.listagem:
                     break;
-                case Menu.adicionar;
+                    case Menu.adicionar:
                     break;
-                case Menu.remover;
+                    case Menu.remover:
                     break;
-                case Menu.sair;
+                    case Menu.sair:
                         escolheuSair = true;
                     break;
                 
@@ -76,6 +78,7 @@ namespace Gestor_de_clientes
             int id = 0;
             if(clientes.Count > 0)
             {
+                Cliente cliente = new Cliente();
                     Console.WriteLine($"Nome: {id}");
                     Console.WriteLine($"Nome: {cliente.nome}");
                     Console.WriteLine($"Email: {cliente.email}");
@@ -93,7 +96,7 @@ namespace Gestor_de_clientes
         {
             Listagem();
             Console.WriteLine("Escolha um cliente para remover (id):");
-            int id = Console.ReadLine();
+            int id = int.Parse(Console.ReadLine());
             if(id >= 0 && id < clientes.Count)
             {
                 clientes.RemoveAt(id);
@@ -102,21 +105,21 @@ namespace Gestor_de_clientes
         }
         static void Salvar()
         {
-            FileStream stream = new FileStream("clientes.dados", FileMode.OpenOrCreate);
+            FileStream fileStream = new FileStream("clientes.dados", FileMode.OpenOrCreate);
             BinaryFormatter encoder = new BinaryFormatter();
 
-            encoder.Serializable(stream, clientes);
+            encoder.Serialize(fileStream, clientes);
             
-            stream.Close();
+            fileStream.Close();
         }
         static void Carregar()
         {
-            FileStream stream = new FileStream("clientes.dados", FileMode.OpenOrCreate);
+            FileStream fileStream = new FileStream("clientes.dados", FileMode.OpenOrCreate);
             try
             {
                 BinaryFormatter encoder = new BinaryFormatter();
 
-                clientes = (List<Cliente>encoder.Dezeriable(stream));
+                clientes = (List<Cliente>)encoder.Deserialize(fileStream);
                 if(clientes == null)
                 {
                     clientes = new List<Cliente>();
@@ -127,7 +130,7 @@ namespace Gestor_de_clientes
             {
                 clientes = new List<Cliente>();
             }
-            stream.Close();
+            fileStream.Close();
         }
     }
 }

@@ -1,0 +1,7 @@
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\obj\Debug\Gestor de clientes.csproj.AssemblyReference.cache
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\obj\Debug\Gestor de clientes.csproj.CoreCompileInputs.cache
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\bin\Debug\Gestor de clientes.exe.config
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\bin\Debug\Gestor de clientes.exe
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\bin\Debug\Gestor de clientes.pdb
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\obj\Debug\Gestor de clientes.exe
+C:\Users\30755\OneDrive\Área de Trabalho\estudos\Gestor de Clientes COnsole\Gestor-de-clientes-no-Console\gestor de clientes\Gestor de clientes\obj\Debug\Gestor de clientes.pdb
