@@ -102,11 +102,32 @@ namespace Gestor_de_clientes
         }
         static void Salvar()
         {
+            FileStream stream = new FileStream("clientes.dados", FileMode.OpenOrCreate);
+            BinaryFormatter encoder = new BinaryFormatter();
 
+            encoder.Serializable(stream, clientes);
+            
+            stream.Close();
         }
         static void Carregar()
         {
-            
+            FileStream stream = new FileStream("clientes.dados", FileMode.OpenOrCreate);
+            try
+            {
+                BinaryFormatter encoder = new BinaryFormatter();
+
+                clientes = (List<Cliente>encoder.Dezeriable(stream));
+                if(clientes == null)
+                {
+                    clientes = new List<Cliente>();
+                }
+                
+            }
+            catch (Exception)
+            {
+                clientes = new List<Cliente>();
+            }
+            stream.Close();
         }
     }
 }
